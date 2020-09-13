@@ -5,17 +5,25 @@ public class Printer {
     private int numberOfPagePrinted;
     private boolean duplexPrinter;
 
-    public Printer(int tonerLevel, int numberOfPagePrinted, boolean duplexPrinter) {
+    public Printer(int tonerLevel, boolean duplexPrinter) {
         if (tonerLevel >= 0 && tonerLevel <= 100){
             this.tonerLevel = tonerLevel;
+        }else{
+            this.tonerLevel = -1;
         }
-        this.numberOfPagePrinted = numberOfPagePrinted;
+        this.numberOfPagePrinted = 0;
         this.duplexPrinter = duplexPrinter;
     }
 
-    public void refillToner(int refill){
+    public int refillToner(int refill){
         if (refill >= 0 && refill <= 100){
-            this.tonerLevel = refill;
+            if ((this.tonerLevel + refill >=0) && (this.tonerLevel + refill <=0)){
+                return this.tonerLevel + refill;
+            }else {
+                return -1;
+            }
+        }else {
+            return -1;
         }
     }
 
