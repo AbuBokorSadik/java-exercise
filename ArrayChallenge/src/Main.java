@@ -15,6 +15,7 @@ public class Main {
         int[] array = new int[number];
         for (int i=0;i<number;i++){
             array[i] = scanner.nextInt();
+            scanner.nextLine();
         }
         return array;
     }
