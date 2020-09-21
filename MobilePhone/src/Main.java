@@ -93,7 +93,3 @@ public class Main {
         }
     }
 }
-
-
-// Options:  Quit, print list of contacts, add new contact, update existing contact, remove contact
-// and search/find contact.

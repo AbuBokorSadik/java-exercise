@@ -25,7 +25,11 @@ public class MobilePhone {
 
     public void modifyContact(String currentName, String newName, String newContact){
         int position = findItem(currentName);
-        if (position>=0){
+        int positionNewName = findItem(newName);
+
+        if (positionNewName>=0){
+            System.out.println("Newly modify name is exist in the list");
+        }else if (position>=0){
             contacts.set(position,new Contacts(newName,newContact));
             System.out.println("Contact information modified");
         }else {
