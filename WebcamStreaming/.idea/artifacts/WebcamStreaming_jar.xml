@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WebcamStreaming:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/WebcamStreaming_jar</output-path>
+    <root id="archive" name="WebcamStreaming.jar">
+      <element id="module-output" name="WebcamStreaming" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../SaveDownld/webcam-capture-0.3.12-dist/libs/slf4j-api-1.7.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../SaveDownld/webcam-capture-0.3.12-dist/webcam-capture-0.3.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../SaveDownld/webcam-capture-0.3.12-dist/libs/bridj-0.7.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
