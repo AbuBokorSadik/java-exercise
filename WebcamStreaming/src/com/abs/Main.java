@@ -3,29 +3,32 @@ package com.abs;
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
 import com.github.sarxos.webcam.WebcamResolution;
+import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 
-public class Main {
+public class Main{
 
     public static void main(String[] args) {
 
         initFrame();
+//        template1();
 
     }
 
     private static void initFrame() {
 
         JFrame jFrame = new JFrame();
-        jFrame.setTitle("Webcam Streaming");
-
-        jFrame.setLocation(0, 0);
+        JPanel jPanel = new JPanel();
 
         jFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         jFrame.setUndecorated(true);
 
-        jFrame.add(initWeabcam());
+        jPanel.add(initWeabcam());
+        jFrame.add(jPanel);
+
         jFrame.pack();
         jFrame.setDefaultCloseOperation(jFrame.EXIT_ON_CLOSE);
         jFrame.setVisible(true);
@@ -43,7 +46,35 @@ public class Main {
         webcamPanel.setFPSLimited(false);
         webcamPanel.setMirrored(true);
 
+        webcamPanel.add(template1());
+
         return webcamPanel;
 
     }
+
+    private static JPanel template1(){
+
+        JPanel jPanel = new JPanel();
+        jPanel.setBackground(new Color(1.0f, 1.0f, 1.0f, 0.2f));
+
+        jPanel.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        
+        int width = 200;
+        int height = 200;
+        JPanel jPanel1 = new JPanel();
+        jPanel1.setBorder(new LineBorder(Color.RED, 3));
+        jPanel1.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
+        jPanel1.setPreferredSize(new Dimension(width, height));
+        jPanel1.setMaximumSize(new Dimension(width, height));
+        jPanel1.setMinimumSize(new Dimension(width, height));
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        jPanel.add(jPanel1,gbc);
+
+        return jPanel;
+
+    }
+
 }
